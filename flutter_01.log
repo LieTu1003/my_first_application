@@ -1,0 +1,77 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color run --machine --track-widget-creation --device-id=edge --start-paused --dart-define=flutter.inspector.structuredErrors=true lib\main.dart
+
+## exception
+
+StateError: Bad state: No context with the running Dart application.
+
+```
+#0      RemoteDebuggerExecutionContext.id (package:dwds/src/debugging/execution_context.dart:55:7)
+<asynchronous suspension>
+#1      AppInspector._getExtensionRpcs (package:dwds/src/debugging/inspector.dart:538:20)
+<asynchronous suspension>
+#2      AppInspector._initialize (package:dwds/src/debugging/inspector.dart:97:34)
+<asynchronous suspension>
+#3      AppInspector.initialize (package:dwds/src/debugging/inspector.dart:160:5)
+<asynchronous suspension>
+#4      ChromeProxyService.createIsolate (package:dwds/src/services/chrome_proxy_service.dart:216:18)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 2.10.3, on Microsoft Windows [Version 10.0.19044.1766], locale zh-CN)
+    • Flutter version 2.10.3 at D:\flutter\flutter_windows_2.10.3-stable\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 7e9793dee1 (4 months ago), 2022-03-02 11:23:12 -0600
+    • Engine revision bd539267b4
+    • Dart version 2.16.1
+    • DevTools version 2.9.2
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 32.1.0-rc1)
+    • Android SDK at C:\Users\huawei\AppData\Local\Android\sdk
+    • Platform android-32, build-tools 32.1.0-rc1
+    • Java binary at: D:\Androidstudio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 11.0.11+9-b60-7590822)
+    • All Android licenses accepted.
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[✗] Visual Studio - develop for Windows
+    ✗ Visual Studio not installed; this is necessary for Windows development.
+      Download at https://visualstudio.microsoft.com/downloads/.
+      Please install the "Desktop development with C++" workload, including all of its default components
+
+[✓] Android Studio (version 2021.1)
+    • Android Studio at D:\Androidstudio
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 11.0.11+9-b60-7590822)
+
+[✓] IntelliJ IDEA Community Edition (version 2021.2)
+    • IntelliJ at C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+
+[✓] Connected device (2 available)
+    • Chrome (web) • chrome • web-javascript • Google Chrome 101.0.4951.67
+    • Edge (web)   • edge   • web-javascript • Microsoft Edge 102.0.1245.44
+
+[!] HTTP Host Availability
+    ✗ HTTP host https://maven.google.com/ is not reachable. Reason: An error occurred while checking the HTTP host: 信号灯超时时间已到
+
+    ✗ HTTP host https://cloud.google.com/ is not reachable. Reason: An error occurred while checking the HTTP host: 信号灯超时时间已到
+
+
+! Doctor found issues in 2 categories.
+```
